@@ -43,7 +43,7 @@ public class Basic26 extends BasicTestCase implements MicroTestCase {
            Map.Entry e = (Entry) iter.next();
            if(e.getKey().equals(FIELD_NAME)) {
                PrintWriter writer = resp.getWriter();
-               writer.println(e.getValue());        
+               writer.println(e.getValue());       /* BAD */ 
            }           
        }
     }
