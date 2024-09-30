@@ -55,6 +55,6 @@ public class Inter5 extends BasicTestCase implements MicroTestCase {
     }
     
     public int getVulnerabilityCount() {
-        return 2;
+        return 1;
     }
 }

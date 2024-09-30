@@ -30,7 +30,7 @@ import securibench.micro.MicroTestCase;
 
 /**
  * @servlet description="values obtained from cookies"
- * @servlet vuln_count = "2"
+ * @servlet vuln_count = "3"
  */
 public class Basic31 extends BasicTestCase implements MicroTestCase {
     class Data {
@@ -63,6 +63,6 @@ public class Basic31 extends BasicTestCase implements MicroTestCase {
     }
 
     public int getVulnerabilityCount() {
-        return 2;
+        return 3;
     }
 }
