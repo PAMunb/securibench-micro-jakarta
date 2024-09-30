@@ -12,8 +12,8 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
- */
-/**
+   */
+/** 
     @author Benjamin Livshits <livshits@cs.stanford.edu>
    
     $Id: Basic16.java,v 1.4 2006/04/04 20:00:40 livshits Exp $
@@ -56,7 +56,7 @@ public class Basic16 extends BasicTestCase implements MicroTestCase {
     }
     
     public String getDescription() {
-        return "simple heap-allocated data strucure";
+        return "simple heap-allocated data structure";
     }
     
     public int getVulnerabilityCount() {
