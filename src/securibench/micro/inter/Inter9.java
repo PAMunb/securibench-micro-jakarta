@@ -67,6 +67,6 @@ public class Inter9 extends BasicTestCase implements MicroTestCase {
     }
     
     public int getVulnerabilityCount() {
-        return 1;
+        return 2;
     }
 }

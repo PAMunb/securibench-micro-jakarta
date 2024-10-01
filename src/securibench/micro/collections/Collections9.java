@@ -48,7 +48,7 @@ public class Collections9 extends BasicTestCase implements MicroTestCase {
         String s2 = (String) c2.get(0); 
         
         PrintWriter writer = resp.getWriter();  
-        writer.println(s2);                    /* OK */
+        writer.println(s2);                    /* BAD */
     }
     
     public String getDescription() {

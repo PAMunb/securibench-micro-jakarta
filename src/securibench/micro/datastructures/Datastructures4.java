@@ -58,7 +58,7 @@ public class Datastructures4 extends BasicTestCase implements MicroTestCase {
        String str = c1.next.str;
        
        PrintWriter writer = resp.getWriter();
-       writer.println(str);                              /* OK */
+       writer.println(str);                              /* BAD */
     }
     
     public String getDescription() {
