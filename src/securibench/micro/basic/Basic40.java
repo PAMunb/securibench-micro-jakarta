@@ -22,34 +22,35 @@ package securibench.micro.basic;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import securibench.micro.BasicTestCase;
 import securibench.micro.MicroTestCase;
-import com.oreilly.servlet.MultipartRequest;
 
 /**
  * @servlet description="MultipartRequest test"
  * @servlet vuln_count = "1"
  */
 public class Basic40 extends BasicTestCase implements MicroTestCase {
-    private static final String FIELD_NAME = "name";
-      
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        // TODO: this expects multipart input 
-        MultipartRequest mreq = new MultipartRequest(req, System.getenv("HOME"));
-        String name = mreq.getParameter(FIELD_NAME);
-        
-        PrintWriter writer = resp.getWriter();
-        writer.println(name);									/* BAD */
-    }
-    
+	private static final String FIELD_NAME = "name";
 
-    public String getDescription() {
-        return "MultipartRequest test";
-    }
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		MultipartHttpServletRequest mreq = new DefaultMultipartHttpServletRequest(req);
+		String name = mreq.getParameter(FIELD_NAME);
 
-    public int getVulnerabilityCount() {
-        return 1;
-    }
+		PrintWriter writer = resp.getWriter();
+		writer.println(name); /* BAD */
+	}
+
+	public String getDescription() {
+		return "MultipartRequest test";
+	}
+
+	public int getVulnerabilityCount() {
+		return 1;
+	}
 }
