@@ -25,7 +25,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-// import soot.jimple.infoflow.test.securibench.supportClasses.DummyServletConfig;
+import securibench.supportClasses.DummyServletConfig;
 
 public abstract class BasicTestCase extends HttpServlet {
 	protected void doTrace(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,9 +50,8 @@ public abstract class BasicTestCase extends HttpServlet {
 
 	// added method for testing:
 
-	// @Override
-	// public ServletConfig getServletConfig() {
-	// 	return new DummyServletConfig();
-	// }
-
+	@Override
+	public ServletConfig getServletConfig() {
+		return new DummyServletConfig();
+	}
 }
